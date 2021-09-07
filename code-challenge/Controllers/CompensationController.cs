@@ -24,7 +24,7 @@ namespace challenge.Controllers
         [HttpPost]
         public IActionResult CreateEmployeeCompensation([FromBody] Compensation compensation)
         {
-            _logger.LogDebug($"Received employee create request for '{compensation.Employee.FirstName} {compensation.Employee.LastName}'");
+            _logger.LogDebug($"Received employee compensation create request for '{compensation.Employee.FirstName} {compensation.Employee.LastName}'");
 
             _compensationService.Create(compensation);
 
@@ -34,7 +34,7 @@ namespace challenge.Controllers
         [HttpGet("{id}", Name = "getEmployeeCompensationById")]
         public IActionResult GetEmployeeById(String id)
         {
-            _logger.LogDebug($"Received employee get request for '{id}'");
+            _logger.LogDebug($"Received employee compensation get request for '{id}'");
 
             var compensation = _compensationService.GetById(id);
 
